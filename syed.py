@@ -249,7 +249,7 @@ def handle_bgmi(message):
                 subprocess.run(full_command, shell=True)
                 response = f"✨✨Premium \nAttack Finished In This Proxy. \n📡 Target: {target} \n🔌 Port: {port} \n⏱️ Time: {time} "
         else:
-            response = "Usage :- /chodo <target> <port> <time>\nBy NiTZEX @SAYYED_Z"  # Updated command syntax
+            response = "Usage :- /chodo <target> <port> <time>"  # Updated command syntax
     else:
         response = "You Are Not ✨✨Premium User's To Authorized To Use This Command."
 
@@ -303,7 +303,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot"
+    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot DM @saiyam_96 TO BUY"
     bot.reply_to(message, response)
 
 
